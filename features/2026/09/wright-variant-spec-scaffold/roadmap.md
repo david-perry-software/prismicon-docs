@@ -2,14 +2,14 @@
 status: in-progress
 branch: feature/wright-variant-spec-scaffold
 last-updated: 2026-09-20
-next-step: "1.1 Confirm baseline and lock scaffold-only boundaries"
+next-step: "1.2 Add/update tests that pin no public API/type expansion unless explicitly justified"
 artifact-pr: "#3"
 initiative: "frank-lloyd-wright-variant"
 ```
 
 ## Phase 1: Baseline and boundaries
 
-- [ ] 1.1 Confirm baseline and lock scaffold-only boundaries against the accepted decisions; verify: `npm test && npm run check:variants`
+- [x] 1.1 Confirm baseline and lock scaffold-only boundaries against the accepted decisions; verify: `npm test && npm run check:variants`
 - [ ] 1.2 Add/update tests that pin no public API/type expansion unless explicitly justified; verify: `npm run check:variants`
 
 ## Phase 2: Wright scaffold integration
