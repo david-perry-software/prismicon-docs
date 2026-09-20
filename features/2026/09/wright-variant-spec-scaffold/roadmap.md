@@ -1,5 +1,5 @@
 ```yaml
-status: planned
+status: in-progress
 branch: feature/wright-variant-spec-scaffold
 last-updated: 2026-09-20
 next-step: "1.1 Confirm baseline and lock scaffold-only boundaries"
