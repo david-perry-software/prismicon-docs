@@ -1,8 +1,8 @@
 ```yaml
-status: in-progress
+status: in-review
 branch: feature/wright-variant-spec-scaffold
 last-updated: 2026-09-20
-next-step: "3.1 Run full verification gates after integrating latest origin/main"
+next-step: ""
 artifact-pr: "#3"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -20,5 +20,5 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 3: Stability gate and review handoff
 
-- [ ] 3.1 Run full verification gates after integrating latest `origin/main`; verify: `npm test && npm run check:variants`
-- [ ] 3.2 Update artifacts for completion handoff (`status`, `next-step`, and ticked steps) once all verifies are green; verify: roadmap reflects completed checks with no falsely ticked boxes
+- [x] 3.1 Run full verification gates after integrating latest `origin/main`; verify: `npm test && npm run check:variants`
+- [x] 3.2 Update artifacts for completion handoff (`status`, `next-step`, and ticked steps) once all verifies are green; verify: roadmap reflects completed checks with no falsely ticked boxes
