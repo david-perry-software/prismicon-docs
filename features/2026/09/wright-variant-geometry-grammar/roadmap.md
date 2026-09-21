@@ -1,5 +1,5 @@
 ```yaml
-status: planned
+status: in-progress
 branch: feature/wright-variant-geometry-grammar
 last-updated: 2026-09-20
 next-step: "1.1 Install dependencies and establish a clean verification baseline"
