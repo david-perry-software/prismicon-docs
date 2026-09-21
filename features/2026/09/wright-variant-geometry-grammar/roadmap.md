@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-geometry-grammar
 last-updated: 2026-09-21
-next-step: "3.3 Run the complete no-lint replacement gate after refreshing origin/main"
+next-step: "3.3 Rerun the complete no-lint replacement gate after the Wright integration repair"
 artifact-pr: "#4"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -22,5 +22,6 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 3: Recognition and stability
 
 - [x] 3.1 Review representative pure-family and controlled-hybrid seeds in light and dark modes at sizes 24, 64, and 72 through the existing demo, and capture the comparison evidence; verify: local:3172 — a temporary static server renders each matrix entry unclipped, with immediate Wright-family hierarchy visible and size 24 assessed only for valid bounded output
-- [x] 3.2 Confirm no palette-system, motion-event, legibility-tuning, registry, demo, React, type, or public API scope leaked into the implementation; verify: `git diff --name-only origin/main...HEAD` lists only `src/variants/wright.js` and `test/wright.test.js` in the product repository
+- [x] 3.2 ~Confirm no palette-system, motion-event, legibility-tuning, registry, demo, React, type, or public API scope leaked into the implementation; verify: `git diff --name-only origin/main...HEAD` lists only `src/variants/wright.js` and `test/wright.test.js` in the product repository~ (obsolete: the full gate exposed scaffold-era Wright integration assertions and the Wright-owned golden fixture that must track the intentional spec and geometry change)
+- [x] 3.4 (added 2026-09-21) Update only scaffold-era Wright integration expectations and the Wright-owned golden entry for the geometry spec; verify: `node --test test/renderer-dispatch.test.js test/variants.test.js test/check-variants.test.js` exits 0 and non-Wright golden fixtures remain unchanged
 - [ ] 3.3 Run the complete no-lint replacement gate after integrating `origin/main`; verify: `node -e "const p=require('./package.json'); if ('lint' in p.scripts) process.exit(1)" && npm run verify` exits 0, including contract, exports, types, pack, and unchanged existing goldens
