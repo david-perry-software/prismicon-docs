@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-geometry-grammar
 last-updated: 2026-09-21
-next-step: "3.1 Replace the invalid visual matrix with four pure dominant families plus one controlled hybrid"
+next-step: "3.2 Confirm the implementation did not leak beyond the planned product files"
 artifact-pr: "#4"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -21,6 +21,6 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 3: Recognition and stability
 
-- [ ] 3.1 Review representative pure-family and controlled-hybrid seeds in light and dark modes at sizes 24, 64, and 72 through the existing demo, and capture the comparison evidence; verify: local:3172 — a temporary static server renders each matrix entry unclipped, with immediate Wright-family hierarchy visible and size 24 assessed only for valid bounded output
+- [x] 3.1 Review representative pure-family and controlled-hybrid seeds in light and dark modes at sizes 24, 64, and 72 through the existing demo, and capture the comparison evidence; verify: local:3172 — a temporary static server renders each matrix entry unclipped, with immediate Wright-family hierarchy visible and size 24 assessed only for valid bounded output
 - [ ] 3.2 Confirm no palette-system, motion-event, legibility-tuning, registry, demo, React, type, or public API scope leaked into the implementation; verify: `git diff --name-only origin/main...HEAD` lists only `src/variants/wright.js` and `test/wright.test.js` in the product repository
 - [ ] 3.3 Run the complete no-lint replacement gate after integrating `origin/main`; verify: `node -e "const p=require('./package.json'); if ('lint' in p.scripts) process.exit(1)" && npm run verify` exits 0, including contract, exports, types, pack, and unchanged existing goldens
