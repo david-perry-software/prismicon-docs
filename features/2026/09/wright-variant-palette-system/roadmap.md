@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-palette-system
 last-updated: 2026-09-21
-next-step: "3.1 Inspect representative palette-family seeds in light and dark mode"
+next-step: "3.3 Update only the Wright-owned golden entry to track the intentional palette change"
 artifact-pr: "#5"
 initiative: "frank-lloyd-wright-variant"
 ```
