@@ -1,8 +1,8 @@
 ```yaml
 status: in-progress
 branch: feature/wright-variant-geometry-grammar
-last-updated: 2026-09-20
-next-step: "3.1 Review family and hybrid compositions in the local demo"
+last-updated: 2026-09-21
+next-step: "3.1 Replace the invalid visual matrix with four pure dominant families plus one controlled hybrid"
 artifact-pr: "#4"
 initiative: "frank-lloyd-wright-variant"
 ```
