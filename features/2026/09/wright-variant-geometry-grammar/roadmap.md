@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-geometry-grammar
 last-updated: 2026-09-20
-next-step: "1.2 Define and test the Wright geometry grammar contract"
+next-step: "2.1 Implement dominant and secondary family derivation"
 artifact-pr: "#4"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -10,7 +10,7 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 1: Baseline and grammar contract
 
 - [x] 1.1 Install dependencies and establish a clean verification baseline before source edits; verify: `npm ci && npm run verify` exits 0
-- [ ] 1.2 Define and test the Wright geometry spec, fixed PRNG draw order, four dominant families, and controlled-hybrid compatibility rules in `test/wright.test.js`; verify: `node --test test/wright.test.js` exits 0 with named coverage for Prairie, art-glass, textile-block, Usonian, and hybrid cases
+- [x] 1.2 Define and test the Wright geometry spec, fixed PRNG draw order, four dominant families, and controlled-hybrid compatibility rules in `test/wright.test.js`; verify: `node --test test/wright.test.js` exits 0 with named coverage for Prairie, art-glass, textile-block, Usonian, and hybrid cases
 
 ## Phase 2: Hierarchical geometry
 
