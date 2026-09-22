@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-regression-suite
 last-updated: 2026-09-21
-next-step: "2.2 add test/golden-wright.test.js"
+next-step: "3.1 add a dedicated event-frame stability test in test/wright.test.js"
 artifact-pr: "#8"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -15,8 +15,8 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 2: Representative golden seed sets
 
 - [x] 2.1 Extend `test/helpers/golden.js` with a Wright-only seed extension so `captureGolden({ variant: 'wright' })` additionally captures the representative static seeds and mounted scenarios (one per geometry family, one per palette family, one concrete hybrid with `deriveWright(seed).secondaryFamily !== null`), leaving the shared `STATIC_SEEDS`/`MOUNTED_SCENARIOS` and every other family untouched — verify: `node --test test/golden-v1.test.js test/golden-ncube.test.js test/golden-orbit.test.js test/wright.test.js`
-- [ ] 2.2 Add `test/golden-wright.test.js` mirroring `test/golden-ncube.test.js`: assert the fixture keys equal the registered Wright ids and that every static key and mounted frame hash re-captures byte-identically — verify: `node --test test/golden-wright.test.js`
-- [ ] 2.3 Regenerate goldens and confirm only `test/fixtures/golden-wright-v1.json` changes; the default, n-cube, and orbit fixtures stay byte-identical to `origin/main` — verify: `node scripts/generate-golden.mjs && git diff --exit-code origin/main -- test/fixtures/golden-v1.json test/fixtures/golden-ncube-v1.json test/fixtures/golden-orbit-v1.json`
+- [x] 2.2 Add `test/golden-wright.test.js` mirroring `test/golden-ncube.test.js`: assert the fixture keys equal the registered Wright ids and that every static key and mounted frame hash re-captures byte-identically — verify: `node --test test/golden-wright.test.js`
+- [x] 2.3 Regenerate goldens and confirm only `test/fixtures/golden-wright-v1.json` changes; the default, n-cube, and orbit fixtures stay byte-identical to `origin/main` — verify: `node scripts/generate-golden.mjs && git diff --exit-code origin/main -- test/fixtures/golden-v1.json test/fixtures/golden-ncube-v1.json test/fixtures/golden-orbit-v1.json`
 
 ## Phase 3: Event-frame stability
 
