@@ -1,5 +1,5 @@
 ```yaml
-status: in-review
+status: in-progress
 branch: feature/wright-variant-react-demo-docs
 last-updated: 2026-09-22
 next-step: "2.3"
