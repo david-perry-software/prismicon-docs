@@ -28,8 +28,8 @@ One benign in-flight roadmap adjustment: steps 1.2 and 2.1 were reworded during 
 
 ## Findings
 
-1. **Minor — unused import in `test/wright.test.js`.** `WRIGHT_SMALL_SIZE` is imported (line 12) but never referenced in the test body; the legibility test uses the literal `size === 24` branch rather than `size < WRIGHT_SMALL_SIZE`. No lint tool is configured so this is not caught automatically, and it has no behavioral impact. Cleanup is optional; the test could either use the constant in the branch or drop the import.
-2. **Informational — concurrent merge coordination.** `#21` `wright-variant-motion-events` is still open and touches the same three files (`src/variants/wright.js`, `test/wright.test.js`, `test/fixtures/golden-wright-v1.json`). The edits are in disjoint regions and this PR is standalone-clean, but whichever of `#21`/`#22` merges second must integrate the other's `origin/main` and re-run `node --test test/wright.test.js && npm run verify` (already the plan's stated mitigation).
+1. ~~**Minor — unused import in `test/wright.test.js`.** `WRIGHT_SMALL_SIZE` is imported (line 12) but never referenced in the test body; the legibility test uses the literal `size === 24` branch rather than `size < WRIGHT_SMALL_SIZE`.~~ **Resolved (2026-09-21)** — roadmap step 4.1 changed the branch to `size < WRIGHT_SMALL_SIZE`, so the imported constant is referenced and the threshold is single-sourced; `node --test test/wright.test.js` passes.
+2. ~~**Informational — concurrent merge coordination.** `#21` `wright-variant-motion-events` is still open and touches the same three files; whichever of `#21`/`#22` merges second must integrate the other's `origin/main` and re-run the gate.~~ **Confirmed (2026-09-21)** — roadmap step 4.2 re-checked `#21` (still `OPEN`, `mergedAt: null`), confirmed `origin/main` is an ancestor of both halves' HEAD, and re-ran the full gate green (`node --test test/wright.test.js && npm run verify`).
 
 ## Follow-ups
 

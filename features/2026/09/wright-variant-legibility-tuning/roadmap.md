@@ -1,8 +1,8 @@
 ```yaml
-status: in-progress
+status: in-review
 branch: feature/wright-variant-legibility-tuning
 last-updated: 2026-09-21
-next-step: "4.2"
+next-step: ""
 artifact-pr: "#7"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -26,4 +26,4 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 4: Review fixes
 
 - [x] 4.1 (added 2026-09-21) Resolve the review's minor finding: use `WRIGHT_SMALL_SIZE` in the legibility test branch (replacing the literal `size === 24`) so the imported constant is actually referenced and the threshold is single-sourced — verify: `node --test test/wright.test.js`
-- [ ] 4.2 (added 2026-09-21) Reconfirm the review's informational finding: the concurrent `#21` `wright-variant-motion-events` branch has not merged into `origin/main`, `origin/main` remains an ancestor of both halves' HEAD, and the full gate is still green — verify: `git fetch origin && git merge-base --is-ancestor origin/main HEAD && node --test test/wright.test.js && npm run verify`
+- [x] 4.2 (added 2026-09-21) Reconfirm the review's informational finding: the concurrent `#21` `wright-variant-motion-events` branch has not merged into `origin/main`, `origin/main` remains an ancestor of both halves' HEAD, and the full gate is still green — verify: `git fetch origin && git merge-base --is-ancestor origin/main HEAD && node --test test/wright.test.js && npm run verify`
