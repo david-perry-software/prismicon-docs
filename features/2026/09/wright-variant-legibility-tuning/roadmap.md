@@ -1,5 +1,5 @@
 ```yaml
-status: planned
+status: in-progress
 branch: feature/wright-variant-legibility-tuning
 last-updated: 2026-09-21
 next-step: "1.1"
