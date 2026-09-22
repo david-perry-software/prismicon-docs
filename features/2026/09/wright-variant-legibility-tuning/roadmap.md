@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-legibility-tuning
 last-updated: 2026-09-21
-next-step: "1.2"
+next-step: "2.1"
 artifact-pr: "#7"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -10,11 +10,11 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 1: Thresholds and reduction
 
 - [x] 1.1 Add frozen `WRIGHT_SMALL_SIZE`, `WRIGHT_SMALL_GRID`, and `WRIGHT_SMALL_DECORATIONS` constants and a `small: size < WRIGHT_SMALL_SIZE` flag to `prepareWright`, leaving `deriveWright`, `WRIGHT_DRAW_ORDER`, and `WRIGHT_SPEC_VERSION` untouched — verify: `node --test --test-name-pattern="wright.*size|wright.*derive" test/wright.test.js`
-- [ ] 1.2 Make `buildWright` cap the effective grid columns/rows to `WRIGHT_SMALL_GRID` and `decorationCount` to `WRIGHT_SMALL_DECORATIONS` when `params.small` is true, so size 24 emits fewer modules/decorations while `size >= 28` stays byte-identical — verify: `node --test test/wright.test.js`
+- [x] 1.2 Make `buildWright` cap the effective grid columns/rows to `WRIGHT_SMALL_GRID` and `decorationCount` to `WRIGHT_SMALL_DECORATIONS` when `params.small` is true, and rework the size test in `test/wright.test.js` to assert reduced module/decoration counts at size 24 and full counts at 64/72 — so size 24 emits fewer modules/decorations while `size >= 28` stays byte-identical — verify: `node --test test/wright.test.js`
 
 ## Phase 2: Legibility invariants
 
-- [ ] 2.1 Rework the size test in `test/wright.test.js` to assert reduced counts at size 24, full counts at 64/72, every layer inside `WRIGHT_VIEWBOX_BOUNDS`, strokes `>= 1.3`, a minimum grid-module pane footprint, and no `NaN`/`Infinity` across sizes 24/64/72/140 — verify: `node --test --test-name-pattern="wright.*legibility|wright.*size" test/wright.test.js`
+- [ ] 2.1 Extend the size test with the remaining legibility invariants — every layer inside `WRIGHT_VIEWBOX_BOUNDS`, strokes `>= 1.3`, a minimum grid-module pane footprint, and no `NaN`/`Infinity` across sizes 24/64/72/140 — verify: `node --test --test-name-pattern="wright.*legibility|wright.*size" test/wright.test.js`
 - [ ] 2.2 Confirm WCAG structural contrast `>= 3:1` and the red painted-area ratio `<= 0.10` still hold at small sizes after reduction (narrow the small-size accent width, floor `1.3`, only if the ceiling is actually breached) — verify: `node --test --test-name-pattern="wright.*contrast|wright.*red" test/wright.test.js`
 
 ## Phase 3: Freeze, golden, and verification
