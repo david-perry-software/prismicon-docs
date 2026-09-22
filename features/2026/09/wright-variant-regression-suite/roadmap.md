@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-regression-suite
 last-updated: 2026-09-21
-next-step: "3.1 add a dedicated event-frame stability test in test/wright.test.js"
+next-step: "3.2 confirm representative Wright seeds are in the mounted golden scenarios"
 artifact-pr: "#8"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -20,7 +20,7 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 3: Event-frame stability
 
-- [ ] 3.1 Add a dedicated event-frame stability test in `test/wright.test.js`: for the representative Wright seeds and every `PROBE_STATES` state, run `animateWright` for a bounded number of frames, assert the frame sequence is deterministic across two runs, settles to the exact rest pose by identity within a bounded frame count, and paints finite (`NaN`/`Infinity` absent) geometry inside `WRIGHT_VIEWBOX_BOUNDS` — verify: `node --test --test-name-pattern="wright" test/wright.test.js`
+- [x] 3.1 Add a dedicated event-frame stability test in `test/wright.test.js`: for the representative Wright seeds and every `PROBE_STATES` state, run `animateWright` for a bounded number of frames, assert the frame sequence is deterministic across two runs, settles to the exact rest pose by identity within a bounded frame count, and paints finite (`NaN`/`Infinity` absent) geometry inside `WRIGHT_VIEWBOX_BOUNDS` — verify: `node --test --test-name-pattern="wright" test/wright.test.js`
 - [ ] 3.2 Confirm the representative Wright seeds are included in the mounted golden scenarios so the golden gate locks their event-frame hashes — verify: `node --test test/golden-wright.test.js && npm run check:variants`
 
 ## Phase 4: Final gate
