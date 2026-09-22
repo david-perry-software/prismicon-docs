@@ -3,6 +3,7 @@ status: planned
 branch: feature/wright-variant-react-demo-docs
 last-updated: 2026-09-21
 next-step: "1.1"
+artifact-pr: "#9"
 initiative: "frank-lloyd-wright-variant"
 ```
 
