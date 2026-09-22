@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-motion-events
 last-updated: 2026-09-21
-next-step: "4.1"
+next-step: "5.1"
 artifact-pr: "#6"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -24,7 +24,7 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 4: Visual verification
 
-- [ ] 4.1 Drive `demo/index.html` at `local:3108`, select the Wright variant, sweep all states, and capture frame screenshots under this directory's `evidence/`; confirm motion is restrained, legible, architecture-consistent, and the idle portrait matches the pre-change portrait — verify: local:3108 shows distinct restrained Wright motion per state with an unchanged idle portrait (evidence captured)
+- [x] 4.1 Drive `demo/index.html` at `local:3108`, select the Wright variant, sweep all states, and capture frame screenshots under this directory's `evidence/`; confirm motion is restrained, legible, architecture-consistent, and the idle portrait matches the pre-change portrait — verify: local:3108 shows distinct restrained Wright motion per state with an unchanged idle portrait (evidence captured). Evidence: [idle](evidence/step-4-1-idle.png), [working](evidence/step-4-1-working.png), [waiting](evidence/step-4-1-waiting.png), [thinking](evidence/step-4-1-thinking.png), [sleeping](evidence/step-4-1-sleeping.png), [done](evidence/step-4-1-done.png), [error](evidence/step-4-1-error.png), [sending](evidence/step-4-1-sending.png), [receiving](evidence/step-4-1-receiving.png) (2026-09-21, live at local:3108)
 
 ## Phase 5: Final gate
 
