@@ -1,8 +1,8 @@
 ```yaml
-status: in-progress
+status: in-review
 branch: feature/wright-variant-legibility-tuning
 last-updated: 2026-09-21
-next-step: "5.1 integrate origin/main after #21 wright-variant-motion-events merged and re-verify"
+next-step: ""
 artifact-pr: "#7"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -30,4 +30,4 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 5: Concurrent integration
 
-- [ ] 5.1 (added 2026-09-21) Integrate `origin/main` after `#21` `wright-variant-motion-events` merged — merge `origin/main` into both halves, resolve the `src/variants/wright.js` / `test/wright.test.js` / `test/fixtures/golden-wright-v1.json` conflicts keeping both features' disjoint changes, regenerate the Wright golden, and re-run the full gate — verify: `node --test test/wright.test.js && npm run verify && git merge-base --is-ancestor origin/main HEAD`
+- [x] 5.1 (added 2026-09-21) Integrate `origin/main` after `#21` `wright-variant-motion-events` merged — merge `origin/main` into both halves, resolve the `src/variants/wright.js` / `test/wright.test.js` / `test/fixtures/golden-wright-v1.json` conflicts keeping both features' disjoint changes, regenerate the Wright golden, and re-run the full gate — verify: `node --test test/wright.test.js && npm run verify && git merge-base --is-ancestor origin/main HEAD`
