@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-react-demo-docs
 last-updated: 2026-09-21
-next-step: "3.1"
+next-step: "4.1"
 artifact-pr: "#9"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -19,7 +19,7 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 3: Demo coverage
 
-- [ ] 3.1 Add a dedicated Wright section to `demo/index.html` mirroring the Orbit section (seed input, `STATES` buttons, one `wright` cell via `mountGlyph(box, seed, { kind: 'agent', size: 72, state, dark, variant: 'wright' })`), and confirm the existing variant `<select>` already lists `wright` — verify: serve `demo/` at `local:3163` (`python3 -m http.server 3163 --directory demo`), drive the page in the browser, and capture `evidence/step-3-1-wright-demo.png`
+- [x] 3.1 Add a dedicated Wright section to `demo/index.html` mirroring the Orbit section (seed input, `STATES` buttons, one `wright` cell via `mountGlyph(box, seed, { kind: 'agent', size: 72, state, dark, variant: 'wright' })`), and confirm the existing variant `<select>` already lists `wright` — verify: serve `demo/` at `local:3163` (`python3 -m http.server 3163 --directory demo`), drive the page in the browser, and capture `evidence/step-3-1-wright-demo.png`
 
 ## Phase 4: Final gate
 
