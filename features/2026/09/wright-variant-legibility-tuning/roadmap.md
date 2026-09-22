@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-legibility-tuning
 last-updated: 2026-09-21
-next-step: "2.1"
+next-step: "2.2"
 artifact-pr: "#7"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -14,7 +14,7 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 2: Legibility invariants
 
-- [ ] 2.1 Extend the size test with the remaining legibility invariants — every layer inside `WRIGHT_VIEWBOX_BOUNDS`, strokes `>= 1.3`, a minimum grid-module pane footprint, and no `NaN`/`Infinity` across sizes 24/64/72/140 — verify: `node --test --test-name-pattern="wright.*legibility|wright.*size" test/wright.test.js`
+- [x] 2.1 Extend the size test with the remaining legibility invariants — every layer inside `WRIGHT_VIEWBOX_BOUNDS`, strokes `>= 1.3`, a minimum grid-module pane footprint, and no `NaN`/`Infinity` across sizes 24/64/72/140 — verify: `node --test --test-name-pattern="wright.*legibility|wright.*size" test/wright.test.js`
 - [ ] 2.2 Confirm WCAG structural contrast `>= 3:1` and the red painted-area ratio `<= 0.10` still hold at small sizes after reduction (narrow the small-size accent width, floor `1.3`, only if the ceiling is actually breached) — verify: `node --test --test-name-pattern="wright.*contrast|wright.*red" test/wright.test.js`
 
 ## Phase 3: Freeze, golden, and verification
