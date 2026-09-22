@@ -2,14 +2,14 @@
 status: in-progress
 branch: feature/wright-variant-react-demo-docs
 last-updated: 2026-09-21
-next-step: "1.1"
+next-step: "1.2"
 artifact-pr: "#9"
 initiative: "frank-lloyd-wright-variant"
 ```
 
 ## Phase 1: Type declarations and React-facing selection
 
-- [ ] 1.1 Audit `src/react.js` and `src/variants/index.js` to confirm `wright` is already registered and resolves through `Prismicon`'s `variant` prop and `listVariants()` with no per-variant code, and record the finding — verify: `node -e "import('./src/index.js').then(m=>console.log(m.listVariants().map(v=>v.id).join(',')))"` prints `wright` and `node --test test/renderer-dispatch.test.js test/react-variant.test.js` exits 0
+- [x] 1.1 Audit `src/react.js` and `src/variants/index.js` to confirm `wright` is already registered and resolves through `Prismicon`'s `variant` prop and `listVariants()` with no per-variant code, and record the finding — verify: `node -e "import('./src/index.js').then(m=>console.log(m.listVariants().map(v=>v.id).join(',')))"` prints `wright` and `node --test test/renderer-dispatch.test.js test/react-variant.test.js` exits 0
 - [ ] 1.2 Add `'wright'` to `BuiltInVariantId`, add `WrightFamily`/`WrightPaletteFamily` unions and a `WrightParams` interface (derived and prepared fields exactly as listed in plan.md `## Approach`), and widen `GlyphHandle.params` to include `WrightParams` in `index.d.ts` — verify: `npx tsc --noEmit --strict --target es2020 --lib es2020,dom index.d.ts`
 
 ## Phase 2: README documentation
