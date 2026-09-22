@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-motion-events
 last-updated: 2026-09-21
-next-step: "3.2"
+next-step: "4.1"
 artifact-pr: "#6"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -20,7 +20,7 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 3: Determinism and golden
 
 - [x] 3.1 Add event-frame determinism, per-state distinctness, and settle-to-rest identity tests over the full `PROBE_STATES` list, and update the existing scaffold animate test to the new pose vocabulary — verify: `node --test test/wright.test.js`
-- [ ] 3.2 Regenerate goldens and commit only the Wright `mounted` change, keeping the Wright `static` section and all non-Wright fixtures byte-identical to `origin/main` — verify: `node scripts/generate-golden.mjs && git diff --exit-code origin/main -- test/fixtures/golden-v1.json test/fixtures/golden-ncube-v1.json test/fixtures/golden-orbit-v1.json && node --input-type=commonjs -e "const fs=require('fs'),cp=require('child_process');const n=JSON.parse(fs.readFileSync('test/fixtures/golden-wright-v1.json','utf8'));const w=JSON.parse(cp.execSync('git show origin/main:test/fixtures/golden-wright-v1.json').toString());if(JSON.stringify(n.static)!==JSON.stringify(w.static)){console.error('wright static section changed');process.exit(1)}console.log('wright static section unchanged')"`
+- [x] 3.2 Regenerate goldens and commit only the Wright `mounted` change, keeping the Wright `static` section and all non-Wright fixtures byte-identical to `origin/main` — verify: `node scripts/generate-golden.mjs && git diff --exit-code origin/main -- test/fixtures/golden-v1.json test/fixtures/golden-ncube-v1.json test/fixtures/golden-orbit-v1.json && node --input-type=commonjs -e "const fs=require('fs'),cp=require('child_process');const n=JSON.parse(fs.readFileSync('test/fixtures/golden-wright-v1.json','utf8'));const w=JSON.parse(cp.execSync('git show origin/main:test/fixtures/golden-wright-v1.json').toString());if(JSON.stringify(n.static)!==JSON.stringify(w.static)){console.error('wright static section changed');process.exit(1)}console.log('wright static section unchanged')"`
 
 ## Phase 4: Visual verification
 
