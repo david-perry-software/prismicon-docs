@@ -2,14 +2,14 @@
 status: in-progress
 branch: feature/wright-variant-legibility-tuning
 last-updated: 2026-09-21
-next-step: "1.1"
+next-step: "1.2"
 artifact-pr: "#7"
 initiative: "frank-lloyd-wright-variant"
 ```
 
 ## Phase 1: Thresholds and reduction
 
-- [ ] 1.1 Add frozen `WRIGHT_SMALL_SIZE`, `WRIGHT_SMALL_GRID`, and `WRIGHT_SMALL_DECORATIONS` constants and a `small: size < WRIGHT_SMALL_SIZE` flag to `prepareWright`, leaving `deriveWright`, `WRIGHT_DRAW_ORDER`, and `WRIGHT_SPEC_VERSION` untouched — verify: `node --test --test-name-pattern="wright.*size|wright.*derive" test/wright.test.js`
+- [x] 1.1 Add frozen `WRIGHT_SMALL_SIZE`, `WRIGHT_SMALL_GRID`, and `WRIGHT_SMALL_DECORATIONS` constants and a `small: size < WRIGHT_SMALL_SIZE` flag to `prepareWright`, leaving `deriveWright`, `WRIGHT_DRAW_ORDER`, and `WRIGHT_SPEC_VERSION` untouched — verify: `node --test --test-name-pattern="wright.*size|wright.*derive" test/wright.test.js`
 - [ ] 1.2 Make `buildWright` cap the effective grid columns/rows to `WRIGHT_SMALL_GRID` and `decorationCount` to `WRIGHT_SMALL_DECORATIONS` when `params.small` is true, so size 24 emits fewer modules/decorations while `size >= 28` stays byte-identical — verify: `node --test test/wright.test.js`
 
 ## Phase 2: Legibility invariants
