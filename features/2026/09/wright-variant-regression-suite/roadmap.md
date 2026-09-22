@@ -1,5 +1,5 @@
 ```yaml
-status: in-review
+status: complete
 branch: feature/wright-variant-regression-suite
 last-updated: 2026-09-21
 next-step: ""
