@@ -2,14 +2,14 @@
 status: in-progress
 branch: feature/wright-variant-regression-suite
 last-updated: 2026-09-21
-next-step: "1.1 add scripts/measure-wright.mjs"
+next-step: "1.2 run the measure script and record its output to evidence/wright-benchmark.txt"
 artifact-pr: "#8"
 initiative: "frank-lloyd-wright-variant"
 ```
 
 ## Phase 1: Performance measurement
 
-- [ ] 1.1 Add `scripts/measure-wright.mjs` mirroring `scripts/measure-orbit.mjs`: static SVG byte size and median `paint()` time over 200 calls across the five generic seeds plus the representative Wright seeds (all four geometry families, all three palette families, one verified hybrid), then an animated engine-loop table (working frames at 30 fps, a send burst, settling to rest) reporting median/p95 `animate + paint` ms and the settling frame count, gated `frame gate: pass|fail` — verify: `node scripts/measure-wright.mjs`
+- [x] 1.1 Add `scripts/measure-wright.mjs` mirroring `scripts/measure-orbit.mjs`: static SVG byte size and median `paint()` time over 200 calls across the five generic seeds plus the representative Wright seeds (all four geometry families, all three palette families, one verified hybrid), then an animated engine-loop table (working frames at 30 fps, a send burst, settling to rest) reporting median/p95 `animate + paint` ms and the settling frame count, gated `frame gate: pass|fail` — verify: `node scripts/measure-wright.mjs`
 - [ ] 1.2 Run the measure script and record its output to `evidence/wright-benchmark.txt` in this directory; confirm the frame gate reports `pass` for every representative seed — verify: `node scripts/measure-wright.mjs | tee evidence/wright-benchmark.txt` and `grep -q 'frame gate: pass' evidence/wright-benchmark.txt`
 
 ## Phase 2: Representative golden seed sets
