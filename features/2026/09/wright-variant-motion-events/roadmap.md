@@ -3,6 +3,7 @@ status: planned
 branch: feature/wright-variant-motion-events
 last-updated: 2026-09-21
 next-step: "1.1"
+artifact-pr: "#6"
 initiative: "frank-lloyd-wright-variant"
 ```
 
