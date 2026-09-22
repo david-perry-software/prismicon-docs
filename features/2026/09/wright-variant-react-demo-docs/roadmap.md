@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-react-demo-docs
 last-updated: 2026-09-21
-next-step: "4.2"
+next-step: ""
 artifact-pr: "#9"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -24,4 +24,4 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 4: Final gate
 
 - [x] 4.1 Integrate `origin/main` in both halves and recheck concurrent-delivery overlap (open PRs and their changed files) — verify: `git merge origin/main` in the product and companion halves and `gh pr list --state open --json number,headRefName,title`
-- [ ] 4.2 Confirm existing variants are byte-identical and run the full maintainer gate — verify: `git diff --exit-code origin/main -- src/variants src/core.js test/fixtures src/react.js && npm run verify`
+- [x] 4.2 Confirm existing variants are byte-identical and run the full maintainer gate — verify: `git diff --exit-code origin/main -- src/variants src/core.js test/fixtures src/react.js && npm run verify`
