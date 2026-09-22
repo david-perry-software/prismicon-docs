@@ -17,17 +17,20 @@ Verdict: approve
 
 The implementation follows the plan's approach exactly: the recommended `{ illuminate, panelPulse, settle }` pose shape, the per-state motif mapping, disjoint-hash motion traits (bits 42–52, above the `phase`/`paletteFamily` ranges), bounded illumination lightening re-checked against `WRIGHT_CONTRAST_MIN`, per-module panel-pulse stroke modulation, and a structural settle offset on the horizontal planes. No undocumented changes; `flashWright`, `deriveWright`, `paintWright`'s layer order, and the public variant contract are preserved.
 
+The two findings from the prior review are resolved: `sending`/`receiving` now ease `settle` to rest instead of hard-setting it, and `poseWright(params, 'working')` now seeds the mount pose from `params.phase` so it equals the first `animateWright` frame at `t = 0` (no mount jump, `params` used).
+
 ## Roadmap audit
 
-All 8 steps are ticked and each tick checks out against the codebase:
+All 11 steps are ticked and each tick checks out against the codebase:
 - 1.1 pose/animate replacement, 1.2 hash traits, 2.1 paint interpretation, 2.2 invariant tests, 3.1 determinism/distinctness/settle tests, 3.2 golden regeneration (static byte-identical), 4.1 visual evidence (9 linked `evidence/` screenshots), 5.1 final gate with clean file boundary — all verified.
+- 6.1 settle-easing fix, 6.2 working-pose seeding fix, 6.3 golden regeneration + full gate — each implemented, verified, and committed.
 - Step 4.1 is an ordinary browser-driven step (not `(manual)`), and its linked evidence files exist.
 
 No falsely ticked boxes, no missing-work steps, no repairs required.
 
 ## Findings
 
-- **Minor (non-blocking):** `sending`/`receiving` hard-set `settle: 0` without easing, so entering one of these transient states from a state with non-zero settle can produce a ≤1px structural pop before the burst. It has no effect on determinism, the frozen static identity, or the tested invariants. `poseWright` also leaves its `params` argument unused (consistent with the contract signature). Neither warrants changes.
+None above minor severity. The two prior minor findings (`sending`/`receiving` settle pop; unused `params` in `poseWright`) are fixed and verified by the 6.1–6.3 steps and the full gate.
 
 ## Follow-ups
 
