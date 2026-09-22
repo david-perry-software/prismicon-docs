@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-motion-events
 last-updated: 2026-09-21
-next-step: "5.1"
+next-step: ""
 artifact-pr: "#6"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -28,4 +28,4 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 5: Final gate
 
-- [ ] 5.1 Integrate `origin/main`, recheck concurrent delivery overlap, and confirm the final file boundary and full gates — verify: `node --test test/wright.test.js && npm run verify && test -z "$(git diff --name-only origin/main...HEAD -- . ':(exclude)src/variants/wright.js' ':(exclude)test/wright.test.js' ':(exclude)test/fixtures/golden-wright-v1.json')"`
+- [x] 5.1 Integrate `origin/main`, recheck concurrent delivery overlap, and confirm the final file boundary and full gates — verify: `node --test test/wright.test.js && npm run verify && test -z "$(git diff --name-only origin/main...HEAD -- . ':(exclude)src/variants/wright.js' ':(exclude)test/wright.test.js' ':(exclude)test/fixtures/golden-wright-v1.json')"`
