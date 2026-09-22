@@ -1,8 +1,8 @@
 ```yaml
-status: in-progress
+status: in-review
 branch: feature/wright-variant-regression-suite
 last-updated: 2026-09-21
-next-step: "4.2 confirm CI parity and non-Wright fixture isolation"
+next-step: ""
 artifact-pr: "#8"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -26,4 +26,4 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 4: Final gate
 
 - [x] 4.1 Integrate `origin/main` (product and companion), recheck concurrent-delivery overlap, and run the full maintainer gate — verify: `npm run verify`
-- [ ] 4.2 Confirm CI parity and non-Wright fixture isolation one last time — verify: `npm test && npm run check:variants && git diff --exit-code origin/main -- test/fixtures/golden-v1.json test/fixtures/golden-ncube-v1.json test/fixtures/golden-orbit-v1.json`
+- [x] 4.2 Confirm CI parity and non-Wright fixture isolation one last time — verify: `npm test && npm run check:variants && git diff --exit-code origin/main -- test/fixtures/golden-v1.json test/fixtures/golden-ncube-v1.json test/fixtures/golden-orbit-v1.json`
