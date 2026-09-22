@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-react-demo-docs
 last-updated: 2026-09-21
-next-step: "2.2"
+next-step: "3.1"
 artifact-pr: "#9"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -15,7 +15,7 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 2: README documentation
 
 - [x] 2.1 Add a `### Wright` subsection under `## Variants` documenting the id/label/spec, the four composition families and hybrid rule, the three palette families with the 3:1 contrast floor and 10% red-accent ceiling, the motion-model table, small-size legibility, and the frozen `wright-geometry-v1` derivation — verify: `grep -n "### Wright" README.md` and `npm run check:variants`
-- [ ] 2.2 Update the variant intro sentence, the `listVariants()` example, and the `handle.params` narrowing note so `wright` appears alongside the other three built-ins — verify: `grep -n "wright" README.md` shows the updated example and `npm run verify`
+- [x] 2.2 Update the variant intro sentence, the `listVariants()` example, and the `handle.params` narrowing note so `wright` appears alongside the other three built-ins — verify: `grep -n "wright" README.md` shows the updated example and `npm run verify`
 
 ## Phase 3: Demo coverage
 
