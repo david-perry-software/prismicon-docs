@@ -1,0 +1,43 @@
+wright static benchmark — spec wright-geometry-v1, size 64, seeds: maya, build-bot-7, Alice@X.com, Ada Lovelace, demo-agent, wright-family-1, wright-family-5, wright-family-3, wright-family-0, wright-palette-1, wright-palette-11, wright-palette-0, wright-hybrid-2
+node v22.22.3, linux x64, 2026-09-22
+criteria: static SVG <= 32768 bytes, median paint() <= 5 ms over 200 calls
+
+| seed              | family        | palette        | bytes | median paint ms | pass |
+|-------------------|---------------|----------------|-------|-----------------|------|
+| maya              | prairie       | concrete-wood  |  2835 |           0.025 | yes  |
+| build-bot-7       | art-glass     | textile        |  2624 |           0.023 | yes  |
+| Alice@X.com       | prairie       | textile        |  2546 |           0.022 | yes  |
+| Ada Lovelace      | textile-block | textile        |  3901 |           0.025 | yes  |
+| demo-agent        | textile-block | stained-glass  |  2792 |           0.029 | yes  |
+| wright-family-1   | prairie       | concrete-wood  |  2090 |           0.014 | yes  |
+| wright-family-5   | art-glass     | stained-glass  |  2260 |           0.016 | yes  |
+| wright-family-3   | textile-block | stained-glass  |  1903 |           0.013 | yes  |
+| wright-family-0   | usonian       | stained-glass  |  2200 |           0.015 | yes  |
+| wright-palette-1  | art-glass     | textile        |  2489 |           0.016 | yes  |
+| wright-palette-11 | prairie       | stained-glass  |  2843 |           0.018 | yes  |
+| wright-palette-0  | usonian       | concrete-wood  |  2407 |           0.016 | yes  |
+| wright-hybrid-2   | art-glass     | textile        |  2211 |           0.013 | yes  |
+
+static gate: pass
+
+wright animated-frame benchmark — size 64, dt 0.0333 s
+per seed: 60 working frames, 12 sending frames, then settling until animate returns ctx.rest
+criteria: median animate+paint <= 2 ms, p95 <= 4 ms, settling <= 60 frames
+
+| seed              | median frame ms | p95 frame ms | settle frames | pass |
+|-------------------|-----------------|--------------|---------------|------|
+| maya              |           0.028 |        0.097 |            33 | yes  |
+| build-bot-7       |           0.024 |        0.049 |            33 | yes  |
+| Alice@X.com       |           0.026 |        0.073 |            33 | yes  |
+| Ada Lovelace      |           0.039 |        0.146 |            33 | yes  |
+| demo-agent        |           0.034 |        0.135 |            33 | yes  |
+| wright-family-1   |           0.028 |        0.134 |            33 | yes  |
+| wright-family-5   |           0.027 |        0.100 |            33 | yes  |
+| wright-family-3   |           0.021 |        0.035 |            33 | yes  |
+| wright-family-0   |           0.024 |        0.064 |            33 | yes  |
+| wright-palette-1  |           0.022 |        0.045 |            33 | yes  |
+| wright-palette-11 |           0.027 |        0.093 |            33 | yes  |
+| wright-palette-0  |           0.021 |        0.067 |            33 | yes  |
+| wright-hybrid-2   |           0.041 |        0.095 |            33 | yes  |
+
+frame gate: pass
