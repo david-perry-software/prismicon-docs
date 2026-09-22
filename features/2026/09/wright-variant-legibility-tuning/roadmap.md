@@ -1,8 +1,8 @@
 ```yaml
-status: in-review
+status: in-progress
 branch: feature/wright-variant-legibility-tuning
 last-updated: 2026-09-21
-next-step: ""
+next-step: "5.1 integrate origin/main after #21 wright-variant-motion-events merged and re-verify"
 artifact-pr: "#7"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -27,3 +27,7 @@ initiative: "frank-lloyd-wright-variant"
 
 - [x] 4.1 (added 2026-09-21) Resolve the review's minor finding: use `WRIGHT_SMALL_SIZE` in the legibility test branch (replacing the literal `size === 24`) so the imported constant is actually referenced and the threshold is single-sourced — verify: `node --test test/wright.test.js`
 - [x] 4.2 (added 2026-09-21) Reconfirm the review's informational finding: the concurrent `#21` `wright-variant-motion-events` branch has not merged into `origin/main`, `origin/main` remains an ancestor of both halves' HEAD, and the full gate is still green — verify: `git fetch origin && git merge-base --is-ancestor origin/main HEAD && node --test test/wright.test.js && npm run verify`
+
+## Phase 5: Concurrent integration
+
+- [ ] 5.1 (added 2026-09-21) Integrate `origin/main` after `#21` `wright-variant-motion-events` merged — merge `origin/main` into both halves, resolve the `src/variants/wright.js` / `test/wright.test.js` / `test/fixtures/golden-wright-v1.json` conflicts keeping both features' disjoint changes, regenerate the Wright golden, and re-run the full gate — verify: `node --test test/wright.test.js && npm run verify && git merge-base --is-ancestor origin/main HEAD`
