@@ -1,8 +1,8 @@
 ```yaml
-status: in-review
+status: in-progress
 branch: feature/wright-variant-motion-events
 last-updated: 2026-09-21
-next-step: ""
+next-step: "6.1"
 artifact-pr: "#6"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -29,3 +29,9 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 5: Final gate
 
 - [x] 5.1 Integrate `origin/main`, recheck concurrent delivery overlap, and confirm the final file boundary and full gates — verify: `node --test test/wright.test.js && npm run verify && test -z "$(git diff --name-only origin/main...HEAD -- . ':(exclude)src/variants/wright.js' ':(exclude)test/wright.test.js' ':(exclude)test/fixtures/golden-wright-v1.json')"`
+
+## Phase 6: Review fixes (added 2026-09-21)
+
+- [ ] 6.1 (added 2026-09-21) Ease `settle` toward rest in the `sending`/`receiving` branch of `animateWright` instead of hard-setting it, removing the ≤1px structural pop noted in review — verify: `node --test test/wright.test.js`
+- [ ] 6.2 (added 2026-09-21) Seed the `working` mount pose in `poseWright` from `params.phase` so it equals the first `animateWright` frame (no mount jump, `params` now used), and update the working-pose test assertion — verify: `node --test test/wright.test.js`
+- [ ] 6.3 (added 2026-09-21) Regenerate the Wright golden `mounted` section for the changed working/sending/receiving frames and run the full gate — verify: `node scripts/generate-golden.mjs && git diff --exit-code origin/main -- test/fixtures/golden-v1.json test/fixtures/golden-ncube-v1.json test/fixtures/golden-orbit-v1.json && node --input-type=commonjs -e "const fs=require('fs'),cp=require('child_process');const n=JSON.parse(fs.readFileSync('test/fixtures/golden-wright-v1.json','utf8'));const w=JSON.parse(cp.execSync('git show origin/main:test/fixtures/golden-wright-v1.json').toString());if(JSON.stringify(n.static)!==JSON.stringify(w.static)){console.error('wright static section changed');process.exit(1)}console.log('wright static section unchanged')" && npm run verify`
