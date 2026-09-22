@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-motion-events
 last-updated: 2026-09-21
-next-step: "2.1"
+next-step: "2.2"
 artifact-pr: "#6"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -14,7 +14,7 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 2: Painting and invariants
 
-- [ ] 2.1 Extend `paintWright` to interpret the new pose (bounded illumination lightening, per-module panel-pulse modulation, structural settle offset) while preserving layer order, `data-wright-layer` attributes, finite SVG, and byte-identical rest rendering — verify: `node --test --test-name-pattern="wright.*paint|wright.*palette" test/wright.test.js`
+- [x] 2.1 Extend `paintWright` to interpret the new pose (bounded illumination lightening, per-module panel-pulse modulation, structural settle offset) while preserving layer order, `data-wright-layer` attributes, finite SVG, and byte-identical rest rendering — verify: `node --test --test-name-pattern="wright.*paint|wright.*palette" test/wright.test.js`
 - [ ] 2.2 Enforce the invariants at every animated frame: geometry inside the 100×100 viewBox stroke bounds, red accent ≤10% painted area, ≥3:1 contrast on final emitted colors, and reduced-motion output fully static — verify: `node --test test/wright.test.js`
 
 ## Phase 3: Determinism and golden
