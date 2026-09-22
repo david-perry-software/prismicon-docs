@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-motion-events
 last-updated: 2026-09-21
-next-step: "1.2"
+next-step: "2.1"
 artifact-pr: "#6"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -10,7 +10,7 @@ initiative: "frank-lloyd-wright-variant"
 ## Phase 1: Motion language
 
 - [x] 1.1 Replace the placeholder `{ lift, shear, pulse }` pose and its generic `poseWright`/`animateWright` motion in `src/variants/wright.js` with the frozen Wright motion pose (`{ illuminate, panelPulse, settle }`) and per-state motifs: working = illumination sweep + panel pulse, waiting = slow illumination drift, thinking = sequential panel cascade, sleeping = slow dim breath, sending/receiving = transient illumination burst, settling = structural settle/reconstruct. Keep `poseWright(params, 'idle')` the all-neutral rest pose so static rendering stays byte-identical — verify: `node --test --test-name-pattern="wright" test/wright.test.js`
-- [ ] 1.2 Derive tunable motion traits (sweep direction, phase offsets, speed bases) in `prepareWright` from disjoint bit-ranges of `params.hash` with no new PRNG draws, leaving `deriveWright` output and `WRIGHT_SPEC_VERSION` unchanged — verify: `node --test --test-name-pattern="wright.*derive|wright.*motion" test/wright.test.js`
+- [x] 1.2 Derive tunable motion traits (sweep direction, phase offsets, speed bases) in `prepareWright` from disjoint bit-ranges of `params.hash` with no new PRNG draws, leaving `deriveWright` output and `WRIGHT_SPEC_VERSION` unchanged — verify: `node --test --test-name-pattern="wright.*derive|wright.*motion" test/wright.test.js`
 
 ## Phase 2: Painting and invariants
 
