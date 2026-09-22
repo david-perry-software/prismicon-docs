@@ -2,7 +2,7 @@
 status: in-progress
 branch: feature/wright-variant-legibility-tuning
 last-updated: 2026-09-21
-next-step: "3.1"
+next-step: "3.2"
 artifact-pr: "#7"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -19,6 +19,6 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 3: Freeze, golden, and verification
 
-- [ ] 3.1 Regenerate the Wright golden and confirm only the six `{"size":24}` keys (five static + the `maya` mounted scenario) change, with every other Wright entry and all non-Wright fixtures byte-identical — verify: `node scripts/generate-golden.mjs && npm run check:variants && git diff --exit-code origin/main -- test/fixtures/golden-v1.json test/fixtures/golden-ncube-v1.json test/fixtures/golden-orbit-v1.json && node -e 'const fs=require("fs"),cp=require("child_process");const cur=JSON.parse(fs.readFileSync("test/fixtures/golden-wright-v1.json","utf8"));const old=JSON.parse(cp.execSync("git show origin/main:test/fixtures/golden-wright-v1.json","utf8"));const bad=[];const walk=(a,b,p)=>{for(const k of new Set([...Object.keys(a),...Object.keys(b)])){const x=a[k],y=b[k],q=p+"/"+k;if(x&&y&&typeof x==="object"&&typeof y==="object"&&!Array.isArray(x))walk(x,y,q);else if(JSON.stringify(x)!==JSON.stringify(y)&&!q.includes("{\"size\":24}"))bad.push(q);}};walk(old,cur);if(bad.length){console.error("unexpected golden changes:",bad);process.exit(1)}console.log("golden diff limited to size-24 keys")'`
+- [x] 3.1 Regenerate the Wright golden and confirm only the six `{"size":24}` keys (five static + the `maya` mounted scenario) change, with every other Wright entry and all non-Wright fixtures byte-identical — verify: `node scripts/generate-golden.mjs && npm run check:variants && git diff --exit-code origin/main -- test/fixtures/golden-v1.json test/fixtures/golden-ncube-v1.json test/fixtures/golden-orbit-v1.json && node -e 'const fs=require("fs"),cp=require("child_process");const cur=JSON.parse(fs.readFileSync("test/fixtures/golden-wright-v1.json","utf8"));const old=JSON.parse(cp.execSync("git show origin/main:test/fixtures/golden-wright-v1.json","utf8"));const bad=[];const walk=(a,b,p)=>{for(const k of new Set([...Object.keys(a),...Object.keys(b)])){const x=a[k],y=b[k],q=p+"/"+k;if(x&&y&&typeof x==="object"&&typeof y==="object"&&!Array.isArray(x))walk(x,y,q);else if(JSON.stringify(x)!==JSON.stringify(y)&&!q.includes("{\"size\":24}"))bad.push(q);}};walk(old,cur);if(bad.length){console.error("unexpected golden changes:",bad);process.exit(1)}console.log("golden diff limited to size-24 keys")'`
 - [ ] 3.2 Drive the unchanged demo in a browser and confirm the Wright variant stays recognizable at small sizes and retains architectural character at larger sizes, capturing screenshots to `evidence/` — verify: `local:3184` — `ss -ltn | grep -c ':3184 '` prints `0`, then serve `python3 -m http.server 3184 --directory . --bind 127.0.0.1`, open `http://localhost:3184/demo/index.html`, select Wright in the variant `<select>`, and confirm small-size legibility and large-size character
 - [ ] 3.3 Integrate `origin/main` (product and companion), recheck concurrent-delivery overlap, and run the full no-lint gate — verify: `node --test test/wright.test.js && npm run verify`
