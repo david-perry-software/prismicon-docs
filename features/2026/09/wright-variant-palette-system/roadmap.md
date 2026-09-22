@@ -1,8 +1,8 @@
 ```yaml
-status: paused
+status: in-review
 branch: feature/wright-variant-palette-system
 last-updated: 2026-09-21
-next-step: "3.1 Inspect representative palette-family seeds in light and dark mode"
+next-step: ""
 artifact-pr: "#5"
 initiative: "frank-lloyd-wright-variant"
 ```
@@ -19,7 +19,7 @@ initiative: "frank-lloyd-wright-variant"
 
 ## Phase 3: Verification
 
-- [ ] 3.1 Inspect representative seeds for all three palette families in light and dark mode through the unchanged existing demo and capture evidence under this delivery artifact directory — verify: local:3141 shows visually distinct, architectural, non-neon palettes with legible structural layers and restrained red
+- [x] 3.1 Inspect representative seeds for all three palette families in light and dark mode through the unchanged existing demo and capture evidence under this delivery artifact directory — evidence: [step-3-1-palette-families-light.png](evidence/step-3-1-palette-families-light.png), [step-3-1-palette-families-dark.png](evidence/step-3-1-palette-families-dark.png) (2026-09-21, live at local:3141 in both light and dark modes; user confirmed "everything looks great" — all three palette families visually distinct, architectural/non-neon, structural layers legible, red accent restrained) — verify: local:3141 shows visually distinct, architectural, non-neon palettes with legible structural layers and restrained red
 - [x] 3.2 ~Run focused and full repository gates, confirm the final file boundary, and recheck concurrent delivery overlap; no lint command is configured — verify: `node --test test/wright.test.js && npm run verify && test -z "$(git diff --name-only origin/main...HEAD -- . ':(exclude)src/variants/wright.js' ':(exclude)test/wright.test.js')"`~ (obsolete: the full gate exposes the Wright-owned golden fixture, which must track the intentional palette change; superseded by 3.3 and 3.4)
 - [x] 3.3 (added 2026-09-21) Update only the Wright-owned golden entry to track the intentional palette change, leaving non-Wright golden fixtures and all other integration expectations byte-identical — verify: `node --test test/check-variants.test.js test/renderer-dispatch.test.js test/variants.test.js && git diff --exit-code origin/main -- test/fixtures/golden-v1.json test/fixtures/golden-ncube-v1.json test/fixtures/golden-orbit-v1.json`
 - [x] 3.4 (added 2026-09-21) Run the complete no-lint replacement gate after integrating origin/main and recheck concurrent delivery overlap — verify: `node --test test/wright.test.js && npm run verify`
